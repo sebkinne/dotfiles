@@ -12,3 +12,8 @@ curl https://raw.githubusercontent.com/sebkinne/dotfiles/main/.scripts/setup_dot
 
 ## Misc
 
+Required software:
+ * git
+ * bat / batcat
+ * tmux
+ * nvim (with luaJIT)
