@@ -1,0 +1,24 @@
+[commit]
+    gpgsign = true
+
+[diff]
+    tool = nvimdiff
+    colorMoved = default
+
+[gpg]
+	format = ssh
+
+[user]
+    email = contact@sebkinne.com
+    name = Sebastian
+	signingkey = ~/.ssh/id_ed25519.pub
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
+[init]
+	defaultBranch = main
+
+[merge]
+    tool = nvimdiff
+    conflictstyle = diff3
