@@ -1,0 +1,55 @@
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local pcacker_bootstrap = ensure_packer()
+
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  -- LSP, Completion & Diagnostics
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/nvim-cmp'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'ray-x/lsp_signature.nvim'
+  use 'L3MON4D3/LuaSnip'
+  use 'onsails/lspkind-nvim'
+  use 'folke/trouble.nvim'
+
+  -- Mason
+  use 'williamboman/mason.nvim'
+
+  -- Colorscheme & Theme
+  use 'folke/tokyonight.nvim'
+
+  -- Lua & Plugin Helpers
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-lua/popup.nvim'
+
+  -- Line
+  use 'nvim-lualine/lualine.nvim'
+
+  -- Buffer Line
+  use 'akinsho/bufferline.nvim'
+
+  -- File Explorer & Code Navigation
+  use { 'kyazdani42/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons', } }
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
+
+  -- Source Code Management
+  use 'lewis6991/gitsigns.nvim'
+  use 'mhartington/formatter.nvim'
+end)
