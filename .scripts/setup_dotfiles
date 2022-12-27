@@ -1,18 +1,23 @@
 #!/bin/bash
 
+GIT_REPO="git@github.com:sebkinne/dotfiles.git"
+
 # Helper function
 function dotfiles {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
 
-git clone --bare git@github.com:sebkinne/dotfiles.git $HOME/.dotfiles
-dotfiles config status.showUntrackedFiles no
+# Ensure we are $HOME
+cd $HOME
 
-mkdir -p .dotfiles-backup
+# Clone the repo and ensure dotfiles must be explicitly tracked
+git clone --bare $GIT_REPO $HOME/.dotfiles
+dotfiles config status.showUntrackedFiles no
 
 dotfiles checkout
 if [ $? -ne 0 ]; then
     echo "Backing up pre-existing dotfiles.";
+    mkdir -p .dotfiles-backup
     dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
 fi;
 
