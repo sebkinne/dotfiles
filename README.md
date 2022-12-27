@@ -7,6 +7,7 @@ curl https://raw.githubusercontent.com/sebkinne/dotfiles/main/.scripts/setup_dot
 ```
 
 ## Neovim
+The configuration in these dotfiles requires neovim 0.8 or higher, compiled with luaJIT (default when you compile yourself).
 
 ## Tmux
 
