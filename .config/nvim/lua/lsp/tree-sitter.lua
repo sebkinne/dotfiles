@@ -1,8 +1,8 @@
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     'bash',
-    'comment',
     'c',
+    'comment',
     'cpp',
     'css',
     'dockerfile',
@@ -17,6 +17,7 @@ require'nvim-treesitter.configs'.setup {
     'scss',
     'tsx',
     'typescript',
+    'vim',
     'yaml'
   },
   highlight = {

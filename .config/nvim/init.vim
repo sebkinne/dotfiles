@@ -26,7 +26,7 @@ require('lsp')
 require('lsp/tree-sitter')
 require('lsp/signature')
 require('lsp/completion')
-require('diagnostics')
+require('lsp/diagnostics')
 
 -- Line
 require('buffer-line')
