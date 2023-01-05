@@ -40,5 +40,7 @@ require('tele-scope')
 require('git-integration')
 require('format')
 
--- require('indent-line')
+-- Require google if we have it
+pcall(require, 'google')
+
 EOF
