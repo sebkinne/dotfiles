@@ -1,17 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" init.vim
-" -------------------------------------------------------
-" All plugins are configured via the lua interface,
-" and are compartmentalised into their own files in
-" lua/.
-"
-" Basic options and general mappings are in Vimscript
-" files, located in vim/
-"
-source ~/.config/nvim/vim/basics.vim
-source ~/.config/nvim/vim/mappings.vim
+-- Basics
+require('basics')
 
-lua << EOF
 -- Packer
 require('plugins/plugins')
 
@@ -43,4 +32,6 @@ require('theme/colorscheme')
 -- Require google if we have it
 pcall(require, 'google')
 
-EOF
+-- Commands & Mappings
+require('commands')
+require('mappings')
