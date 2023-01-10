@@ -13,13 +13,22 @@ source ~/.config/nvim/vim/mappings.vim
 
 lua << EOF
 -- Packer
-require('plugins')
+require('plugins/plugins')
 
 -- Mason
-require('mason-menu')
+require('plugins/mason-menu')
 
--- Colorscheme & Theme
-require('theme/colorscheme')
+-- Line
+require('plugins/buffer-line')
+require('plugins/status-line')
+
+-- File Navigation
+require('plugins/tree')
+require('plugins/tele-scope')
+
+-- Source Code Management
+require('plugins/git-integration')
+require('plugins/format')
 
 -- LSP & Diagnostics
 require('lsp')
@@ -28,17 +37,8 @@ require('lsp/signature')
 require('lsp/completion')
 require('lsp/diagnostics')
 
--- Line
-require('buffer-line')
-require('status-line')
-
--- File Navigation
-require('tree')
-require('tele-scope')
-
--- Source Code Management
-require('git-integration')
-require('format')
+-- Colorscheme & Theme
+require('theme/colorscheme')
 
 -- Require google if we have it
 pcall(require, 'google')
