@@ -44,3 +44,8 @@ fi
 export FZF_COMPLETION_OPTS='--border --info=inline'
 export FZF_DEFAULT_OPTS=' --color=fg:#c6ccd9,bg:#2e3440,hl:#a94a56 --color=fg+:#c6ccd9,bg+:#2e3440,hl+:#a94a56 --color=info:#92b279,prompt:#a34a55,pointer:#af5fff --color=marker:#92b279,spinner:#cfd5e3,header:#87afaf'
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+# Rust
+if [[ "$(which cargo)" != "" ]]; then
+    . "$HOME/.cargo/env"
+fi
