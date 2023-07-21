@@ -7,6 +7,7 @@ alias cat='batcat --pager=never'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -c'
+alias python='python3'
 
 # Tmux
 alias tn='tmux new -s $1'
