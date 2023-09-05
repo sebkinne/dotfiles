@@ -1,6 +1,10 @@
 -- Basics
 require('basics')
 
+-- Commands & Mappings
+require('commands')
+require('mappings')
+
 -- Packer
 require('plugins/plugins')
 
@@ -31,7 +35,3 @@ require('theme/colorscheme')
 
 -- Require google if we have it
 pcall(require, 'google')
-
--- Commands & Mappings
-require('commands')
-require('mappings')
