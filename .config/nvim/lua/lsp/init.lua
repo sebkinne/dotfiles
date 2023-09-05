@@ -1,6 +1,12 @@
 local common = require('lsp/common')
 local util = require 'lspconfig.util'
 
+-- Set up nvim-lsp-installer
+require('nvim-lsp-installer').setup {}
+
+-- Angular
+require('lspconfig').angularls.setup(common.default_config)
+
 -- Bash
 require('lspconfig').bashls.setup(common.default_config)
 
