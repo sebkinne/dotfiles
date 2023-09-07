@@ -181,7 +181,7 @@ ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 ins_right {
   'diagnostics',
   sources = { 'nvim_lsp' },
-  symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+  symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
