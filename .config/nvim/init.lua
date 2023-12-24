@@ -32,6 +32,6 @@ require('theme/colorscheme')
 -- Require google if we have it
 pcall(require, 'google')
 
--- Commands & Mappings
+-- Commands
 require('commands')
 require('mappings')

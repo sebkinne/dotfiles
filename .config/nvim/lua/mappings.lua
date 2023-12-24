@@ -1,9 +1,6 @@
 -- Options default for silent mappings
 local silentops = { noremap = true, silent = true }
 
--- Configure leader
-vim.g.mapleader = ' '
-
 -- Create splits
 vim.api.nvim_set_keymap('n', '<leader>s', ':sp<CR>', silentops)
 vim.api.nvim_set_keymap('n', '<leader>v', ':vsp<CR>', silentops)
