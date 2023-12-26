@@ -29,6 +29,7 @@ if [[ "$(which go)" != "" ]]; then
 fi
 
 export PATH=$PATH:$HOME/.scripts
+export PATH=$PATH:$HOME/.local/bin
 
 # GCloud
 if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/path.bash.inc'; fi
