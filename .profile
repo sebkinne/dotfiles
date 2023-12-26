@@ -47,6 +47,6 @@ export FZF_DEFAULT_OPTS=' --color=fg:#c6ccd9,bg:#2e3440,hl:#a94a56 --color=fg+:#
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 # Rust
-if [[ "$(which cargo)" != "" ]]; then
+if [[ "$(which cargo)" != "" ]] && [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
