@@ -1,3 +1,14 @@
+[init]
+	defaultBranch = main
+
+[user]
+    email = contact@sebkinne.com
+    name = Sebastian
+	signingkey = ~/.ssh/id_ecdsa_sk.pub
+
+[gpg]
+	format = ssh
+
 [commit]
     gpgsign = true
 
@@ -5,20 +16,15 @@
     tool = nvimdiff
     colorMoved = default
 
-[gpg]
-	format = ssh
-
-[user]
-    email = contact@sebkinne.com
-    name = Sebastian
-	signingkey = ~/.ssh/id_ecdsa_sk.pub
+[merge]
+    tool = nvimdiff
+    conflictstyle = diff3
 
 [url "git@github.com:"]
     insteadOf = https://github.com/
 
-[init]
-	defaultBranch = main
-
-[merge]
-    tool = nvimdiff
-    conflictstyle = diff3
+# Cargo has issues when we force SSH authentication for GitHub, so use HTTPS instead
+[url "https://github.com/rust-lang/crates.io-index"]
+  insteadOf = https://github.com/rust-lang/crates.io-index
+[url "https://github.com/RustSec/advisory-db"]
+  insteadOf = https://github.com/RustSec/advisory-db
