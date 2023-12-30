@@ -1,7 +1,7 @@
--- Eviline config for lualine (modified by foxtrot)
+-- Eviline config for lualine
 -- Author: shadmansaleh
--- Credit: glepnir
-local lualine = require 'lualine'
+-- Credit: glepnir, foxtrot, sebkinne
+local lualine = require('lualine')
 
 -- Color table for highlights
 -- stylua: ignore
@@ -87,13 +87,6 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
-    --theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
-      --normal = { c = { fg = colors.fg, bg = colors.bg } },
-      --inactive = { c = { fg = colors.fg, bg = colors.bg } },
-    --},
     theme = 'tokyonight',
   },
   sections = {
@@ -122,11 +115,12 @@ local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
 end
 
--- Inserts a component in lualine_x ot right section
+-- Inserts a component in lualine_x at right section
 local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
+-- Add components to left section
 ins_left {
   function()
     return '▊'
@@ -136,7 +130,6 @@ ins_left {
 }
 
 ins_left {
-  -- mode component
   padding = { left = 1, right = 1 },
   function()
       vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg_dark)
@@ -151,11 +144,12 @@ ins_left {
 }
 
 ins_left {
-  -- filesize component
   'filesize',
 }
 
-ins_left { 'searchcount' }
+ins_left {
+    'searchcount',
+}
 
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
@@ -235,5 +229,5 @@ ins_right {
   padding = { left = 1 },
 }
 
--- Now don't forget to initialize lualine
+-- Initialize lualine
 lualine.setup(config)

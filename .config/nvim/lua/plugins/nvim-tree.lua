@@ -6,13 +6,13 @@ require('nvim-tree').setup {
     open_on_tab          = false,
     hijack_cursor        = false,
     update_cwd           = false,
-    
+
     hijack_unnamed_buffer_when_opening = false,
     hijack_directories   = {
         enable = true,
         auto_open = true,
     },
-    
+
     diagnostics = {
         enable = true,
         icons = {
@@ -38,16 +38,15 @@ require('nvim-tree').setup {
         dotfiles = false,
         custom = {}
     },
-    
+
     git = {
         enable = true,
         ignore = true,
         timeout = 500,
     },
-    
+
     view = {
         width = 35,
-        hide_root_folder = false,
         side = 'right',
         preserve_window_proportions = false,
         number = false,
@@ -81,13 +80,8 @@ require('nvim-tree').setup {
 
     log = {
         enable = false,
-        types = {
-            all = false,
-            config = false,
-            git = false,
-        },
     },
 }
 
-vim.api.nvim_set_keymap("n", "<C-_>", "<cmd>NvimTreeToggle<CR>", {silent = true, noremap = true} )
-vim.api.nvim_set_keymap("n", "<C-/>", "<cmd>NvimTreeToggle<CR>", {silent = true, noremap = true} )
+vim.api.nvim_set_keymap("n", "<C-_>", "<cmd>NvimTreeToggle<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<C-/>", "<cmd>NvimTreeToggle<CR>", {silent = true, noremap = true})

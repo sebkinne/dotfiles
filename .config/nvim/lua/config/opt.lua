@@ -14,9 +14,6 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.wildignore:append({'*/tmp/*', '*.so', '*.swp', '*.zip', '*.svg', '*.png', '*.jpg', '*.gif', 'node_modules'})
 vim.opt.shortmess:append('c')
 
--- Leader key to space
-vim.g.mapleader = ' '
-
 -- Spacing
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4

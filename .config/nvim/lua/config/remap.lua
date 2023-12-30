@@ -1,13 +1,16 @@
 -- Options default for silent mappings
 local silentops = { noremap = true, silent = true }
 
+-- Change leader to space
+vim.g.mapleader = ' '
+
 -- Create splits
 vim.api.nvim_set_keymap('n', '<leader>s', ':sp<CR>', silentops)
 vim.api.nvim_set_keymap('n', '<leader>v', ':vsp<CR>', silentops)
 
--- Move between buffers
-vim.api.nvim_set_keymap('n', '<C-Left>', ':bnext<CR>', silentops)
-vim.api.nvim_set_keymap('n', '<C-Right>', ':bprev<CR>', silentops)
+-- Buffer navigation
+vim.api.nvim_set_keymap('n', '<leader>l', ':bnext<CR>', silentops)
+vim.api.nvim_set_keymap('n', '<leader>h', ':bprev<CR>', silentops)
 vim.api.nvim_set_keymap('n', '<leader>c', ':close<CR>', silentops)
 vim.api.nvim_set_keymap('n', '<leader>d', ':bdelete<CR>', silentops)
 
@@ -20,3 +23,6 @@ vim.api.nvim_set_keymap('n', '<leader>z', ':noh<CR>', silentops)
 
 -- Search for visually selected text
 vim.api.nvim_set_keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', silentops)
+
+-- Formatting
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, silentops)
