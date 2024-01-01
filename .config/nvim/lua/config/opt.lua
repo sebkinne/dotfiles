@@ -13,6 +13,7 @@ vim.opt.updatetime = 300
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.wildignore:append({'*/tmp/*', '*.so', '*.swp', '*.zip', '*.svg', '*.png', '*.jpg', '*.gif', 'node_modules'})
 vim.opt.shortmess:append('c')
+vim.opt.cc = '80'
 
 -- Spacing
 vim.opt.tabstop = 4
