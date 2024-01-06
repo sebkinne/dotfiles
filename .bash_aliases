@@ -8,6 +8,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -c'
 alias python='python3'
+alias update='sudo apt update && sudo apt full-upgrade && sudo apt autoremove'
+alias updatefw='sudo fwupdmgr refresh --force && sudo fwupdmgr update'
 
 # Tmux
 alias tn='tmux new -s $1'
