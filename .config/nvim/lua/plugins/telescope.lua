@@ -27,6 +27,7 @@ vim.api.nvim_set_keymap('n', '<leader>tm', '<cmd>Telescope marks<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>ts', '<cmd>Telescope search_history<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>Telescope file_browser<CR>', opts)
 
+vim.api.nvim_set_keymap('n', '<leader>gf', '<cmd>Telescope git_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>Telescope git_branches<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>gs', '<cmd>Telescope git_status<CR>', opts)
