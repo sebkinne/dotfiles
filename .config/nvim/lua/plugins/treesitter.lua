@@ -15,12 +15,13 @@ require('nvim-treesitter.configs').setup {
         'jsonc',
         'lua',
         'php',
+        'python',
         'rust',
         'scss',
         'tsx',
         'typescript',
         'vim',
-        'yaml'
+        'yaml',
     },
 
     highlight = {
