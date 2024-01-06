@@ -1,0 +1,33 @@
+#!/bin/bash
+
+PROJECT_PATH=$HOME/projects
+
+project() {
+    if [ "$#" -ne 1 ]; then
+        exit 1
+    fi
+
+    PD=$PROJECT_PATH/$1
+    PN="prj_$1"
+
+    if [ ! -d $PD ]; then
+        mkdir -p $PD
+    fi
+
+    pushd $PD &>/dev/null
+
+    if [ ! -d $PD/.git ]; then
+        git init . &>/dev/null
+    fi
+
+    if ! $(tmux has-session -t $PN &>/dev/null); then
+        tmux new -d -s $PN 
+        tmux send-keys -t $PN "vim" ENTER
+    fi
+
+    popd &>/dev/null
+
+    tmux a -t $PN
+}
+
+project $1
