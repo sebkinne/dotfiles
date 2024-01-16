@@ -13,11 +13,11 @@ require("tokyonight").setup({
     },
     sidebars = { "qf", "help" },
     day_brightness = 0.3,
-    hide_inactive_statusline = false,
-    dim_inactive = false,
-    lualine_bold = false,
+    hide_inactive_statusline = true,
 
-    on_colors = function(colors) end,
+    on_colors = function(colors)
+        colors.border = colors.blue0
+    end,
     on_highlights = function(highlights, colors) end,
 })
 
