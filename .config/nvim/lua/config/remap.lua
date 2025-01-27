@@ -26,3 +26,6 @@ vim.api.nvim_set_keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', silent
 
 -- Formatting
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, silentops)
+
+-- Terminal
+vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]])
