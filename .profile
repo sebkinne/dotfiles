@@ -30,6 +30,7 @@ fi
 
 export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin/zig
 
 # GCloud
 if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/path.bash.inc'; fi
