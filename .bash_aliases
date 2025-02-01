@@ -1,4 +1,5 @@
 # Vim
+alias nvim='[[ -n "${VIM}" ]] && echo "..." || $(which nvim) $@'
 alias vim='nvim'
 
 # Misc
